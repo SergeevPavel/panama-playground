@@ -93,6 +93,40 @@ pub extern "C" fn gets_callback(f: extern "C" fn(u32)) {
     f(42);
 }
 
+
+#[derive(Debug)]
+pub struct OpaqueStruct {
+    x: u32,
+    y: u64,
+}
+
+impl Drop for OpaqueStruct {
+    fn drop(&mut self) {
+        println!("Drop! {self:?}");
+    }
+}
+
+#[no_mangle]
+pub extern "C" fn returns_struct() -> Box<OpaqueStruct> {
+    let b = Box::new(OpaqueStruct {
+        x: 3u32,
+        y: 15u64,
+    });
+    println!("Return {b:?}");
+    b
+}
+
+#[no_mangle]
+pub extern "C" fn gets_mut_ref(b: &mut OpaqueStruct) {
+    b.x = 42;
+    println!("mut here: {b:?}");
+}
+
+#[no_mangle]
+pub extern "C" fn gets_box(b: Box<OpaqueStruct>) {
+    println!("should be dropped now: {b:?}");
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -9,6 +9,8 @@ typedef enum SimpleEnum {
   Three,
 } SimpleEnum;
 
+typedef struct OpaqueStruct OpaqueStruct;
+
 typedef struct SimpleStruct {
   uint32_t x;
   uint64_t y;
@@ -59,3 +61,9 @@ void gets_string(const char *s);
 void gets_array(const struct SimpleStruct *arr, uintptr_t len);
 
 void gets_callback(void (*f)(uint32_t));
+
+struct OpaqueStruct *returns_struct(void);
+
+void gets_mut_ref(struct OpaqueStruct *b);
+
+void gets_box(struct OpaqueStruct *b);

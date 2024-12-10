@@ -639,5 +639,175 @@ public class panama_header_h {
            throw new AssertionError("should not reach here", ex$);
         }
     }
+
+    private static class returns_struct {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            panama_header_h.C_POINTER    );
+
+        public static final MemorySegment ADDR = panama_header_h.findOrThrow("returns_struct");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * struct OpaqueStruct *returns_struct()
+     * }
+     */
+    public static FunctionDescriptor returns_struct$descriptor() {
+        return returns_struct.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * struct OpaqueStruct *returns_struct()
+     * }
+     */
+    public static MethodHandle returns_struct$handle() {
+        return returns_struct.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * struct OpaqueStruct *returns_struct()
+     * }
+     */
+    public static MemorySegment returns_struct$address() {
+        return returns_struct.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * struct OpaqueStruct *returns_struct()
+     * }
+     */
+    public static MemorySegment returns_struct() {
+        var mh$ = returns_struct.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("returns_struct");
+            }
+            return (MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class gets_mut_ref {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            panama_header_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = panama_header_h.findOrThrow("gets_mut_ref");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * void gets_mut_ref(struct OpaqueStruct *b)
+     * }
+     */
+    public static FunctionDescriptor gets_mut_ref$descriptor() {
+        return gets_mut_ref.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * void gets_mut_ref(struct OpaqueStruct *b)
+     * }
+     */
+    public static MethodHandle gets_mut_ref$handle() {
+        return gets_mut_ref.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void gets_mut_ref(struct OpaqueStruct *b)
+     * }
+     */
+    public static MemorySegment gets_mut_ref$address() {
+        return gets_mut_ref.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * void gets_mut_ref(struct OpaqueStruct *b)
+     * }
+     */
+    public static void gets_mut_ref(MemorySegment b) {
+        var mh$ = gets_mut_ref.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gets_mut_ref", b);
+            }
+            mh$.invokeExact(b);
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class gets_box {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            panama_header_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = panama_header_h.findOrThrow("gets_box");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * void gets_box(struct OpaqueStruct *b)
+     * }
+     */
+    public static FunctionDescriptor gets_box$descriptor() {
+        return gets_box.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * void gets_box(struct OpaqueStruct *b)
+     * }
+     */
+    public static MethodHandle gets_box$handle() {
+        return gets_box.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void gets_box(struct OpaqueStruct *b)
+     * }
+     */
+    public static MemorySegment gets_box$address() {
+        return gets_box.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * void gets_box(struct OpaqueStruct *b)
+     * }
+     */
+    public static void gets_box(MemorySegment b) {
+        var mh$ = gets_box.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gets_box", b);
+            }
+            mh$.invokeExact(b);
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
 }
 

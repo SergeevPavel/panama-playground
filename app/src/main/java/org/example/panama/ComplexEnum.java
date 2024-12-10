@@ -35,7 +35,7 @@ public class ComplexEnum {
         MemoryLayout.unionLayout(
             ItemWithNumber_Body.layout().withName("item_with_number"),
             ItemWithStruct_Body.layout().withName("item_with_struct")
-        ).withName("$anon$39:3")
+        ).withName("$anon$41:3")
     ).withName("ComplexEnum");
 
     /**
@@ -89,7 +89,7 @@ public class ComplexEnum {
         struct.set(tag$LAYOUT, tag$OFFSET, fieldValue);
     }
 
-    private static final GroupLayout item_with_number$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("$anon$39:3"), groupElement("item_with_number"));
+    private static final GroupLayout item_with_number$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("$anon$41:3"), groupElement("item_with_number"));
 
     /**
      * Layout for field:
@@ -133,7 +133,7 @@ public class ComplexEnum {
         MemorySegment.copy(fieldValue, 0L, struct, item_with_number$OFFSET, item_with_number$LAYOUT.byteSize());
     }
 
-    private static final GroupLayout item_with_struct$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("$anon$39:3"), groupElement("item_with_struct"));
+    private static final GroupLayout item_with_struct$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("$anon$41:3"), groupElement("item_with_struct"));
 
     /**
      * Layout for field:

@@ -87,12 +87,23 @@ fun pass_array() {
 }
 
 fun pass_callback() {
+    var y = 0
     Arena.ofConfined().use { arena ->
         gets_callback(`gets_callback$f`.allocate({ x ->
+            y += 1
             println("We got $x from Rust")
         }, arena))
     }
+    println("y: $y")
 }
+
+fun return_box() {
+    val b = returns_struct()
+    gets_mut_ref(b);
+    gets_box(b);
+}
+
+
 
 fun main() {
     println("Java version: ${System.getProperty("java.version")}")
@@ -107,4 +118,5 @@ fun main() {
     pass_string()
     pass_array()
     pass_callback()
+    return_box()
 }
